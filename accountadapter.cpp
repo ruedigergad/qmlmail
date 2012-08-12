@@ -22,5 +22,5 @@ void AccountAdapter::addAccount(const QString &name){
 
     qDebug("Storing new account.");
     bool ret = QMailStore::instance()->addAccount(&account, &config);
-    qDebug() << "addAccount returned: " << ret;
+    qDebug() << "addAccount returned:" << ret;
 }

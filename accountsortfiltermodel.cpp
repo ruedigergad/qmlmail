@@ -18,7 +18,7 @@ quint64 AccountSortFilterModel::getAccountId(int row){
 
     quint64 ret = model->idFromIndex(idx).toULongLong();
 
-    qDebug() << "Found id: " << ret;
+    qDebug() << "Found id:" << ret;
 
     return ret;
 }
