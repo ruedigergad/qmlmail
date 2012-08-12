@@ -31,8 +31,15 @@ PKGCONFIG += qdeclarative-boostable qmfclient
 # Add dependency to Symbian components
 # CONFIG += qt-components
 
+HEADERS += \
+    accountadapter.h \
+    accountsortfiltermodel.h
+
 # The .cpp file which was generated for your project. Feel free to hack it.
-SOURCES += main.cpp
+SOURCES += \
+    main.cpp \
+    accountadapter.cpp \
+    accountsortfiltermodel.cpp
 
 # Please do not modify the following two lines. Required for deployment.
 include(qmlapplicationviewer/qmlapplicationviewer.pri)
