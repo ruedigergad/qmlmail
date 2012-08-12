@@ -26,6 +26,7 @@ Sheet {
             Text {
                 id: nameText
                 text: qsTr("Name")
+                font.pixelSize: 40
             }
 
             TextField{
