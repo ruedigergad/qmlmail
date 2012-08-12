@@ -111,7 +111,7 @@ Page {
 
             model: accountModel
 
-            delegate: Item{
+            delegate: Item {
                 width: parent.width
                 height: delegateText.height
 
@@ -128,6 +128,24 @@ Page {
                     text: name
                     font.pixelSize: 34
                 }
+
+                MouseArea {
+                    anchors.fill: parent
+
+                    onDoubleClicked: {
+                        console.log("Account was double-clicked. Index: " + currentIndex)
+                        var accId = accountModel.getAccountId(currentIndex)
+                        console.log("Found id: " + accId)
+                    }
+                }
+            }
+
+            highlightMoveDuration: 200
+            highlight: Rectangle {
+                id: highlightRectangle
+                color: "gray"
+                width: parent.width
+                opacity: 0.4
             }
         }
     }

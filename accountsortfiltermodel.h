@@ -10,6 +10,8 @@ class AccountSortFilterModel : public QSortFilterProxyModel
     Q_OBJECT
 public:
     explicit AccountSortFilterModel(QObject *parent = 0);
+
+    Q_INVOKABLE quint64 getAccountId(int row);
     
 signals:
     

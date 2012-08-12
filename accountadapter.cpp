@@ -17,6 +17,8 @@ void AccountAdapter::addAccount(const QString &name){
     QMailAccountConfiguration config;
 
     account.setName(name);
+    account.setMessageType(QMailMessage::Email);
+    account.setStatus(QMailAccount::Enabled, true);
 
     qDebug("Storing new account.");
     bool ret = QMailStore::instance()->addAccount(&account, &config);
