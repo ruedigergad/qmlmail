@@ -133,9 +133,11 @@ Page {
                     anchors.fill: parent
 
                     onDoubleClicked: {
-                        console.log("Account was double-clicked. Index: " + currentIndex)
-                        var accId = accountModel.getAccountId(currentIndex)
+                        console.log("Account was double-clicked. Index: " + index)
+                        var accId = accountModel.getAccountId(index)
                         console.log("Found id: " + accId)
+                        accountAdapter.printAccountCustomFields(accId)
+                        accountAdapter.printAccountConfig(accId)
                     }
                 }
             }

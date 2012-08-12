@@ -11,6 +11,9 @@ public:
 
     Q_INVOKABLE void addAccount(const QString &name);
     
+    Q_INVOKABLE void printAccountCustomFields(quint64 id);
+    Q_INVOKABLE void printAccountConfig(quint64 id);
+
 signals:
     
 public slots:

@@ -24,3 +24,13 @@ void AccountAdapter::addAccount(const QString &name){
     bool ret = QMailStore::instance()->addAccount(&account, &config);
     qDebug() << "addAccount returned:" << ret;
 }
+
+void AccountAdapter::printAccountCustomFields(quint64 id){
+    QMailAccount account = QMailStore::instance()->account(QMailAccountId(id));
+    qDebug() << "Custom fields for account with id:" << id << ", name:" << account.name() << "\n" << account.customFields();
+}
+
+void AccountAdapter::printAccountConfig(quint64 id){
+    QMailAccountConfiguration config = QMailStore::instance()->accountConfiguration(QMailAccountId(id));
+    qDebug() << "AccountConfiguration for, id:" << id << ", services:" << config.services();
+}
