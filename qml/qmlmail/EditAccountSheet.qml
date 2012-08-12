@@ -1,11 +1,10 @@
 import QtQuick 1.1
 import com.nokia.meego 1.0
 
-Sheet{
+Sheet {
     id: editAccountSheet
 
     anchors.fill: parent
-    visualParent: accountListPage
 
     property alias name: nameInput.text
 

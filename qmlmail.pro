@@ -33,13 +33,15 @@ PKGCONFIG += qdeclarative-boostable qmfclient
 
 HEADERS += \
     accountadapter.h \
-    accountsortfiltermodel.h
+    accountsortfiltermodel.h \
+    accountmodel.h
 
 # The .cpp file which was generated for your project. Feel free to hack it.
 SOURCES += \
     main.cpp \
     accountadapter.cpp \
-    accountsortfiltermodel.cpp
+    accountsortfiltermodel.cpp \
+    accountmodel.cpp
 
 # Please do not modify the following two lines. Required for deployment.
 include(qmlapplicationviewer/qmlapplicationviewer.pri)

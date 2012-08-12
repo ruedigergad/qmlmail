@@ -1,11 +1,11 @@
 #include "accountsortfiltermodel.h"
 
-#include <qmfclient/QMailAccountListModel>
+#include <accountmodel.h>
 
 AccountSortFilterModel::AccountSortFilterModel(QObject *parent) :
     QSortFilterProxyModel(parent)
 {
-    QMailAccountListModel *model = new QMailAccountListModel(0);
+    AccountModel *model = new AccountModel();
 
     setSourceModel(model);
 }

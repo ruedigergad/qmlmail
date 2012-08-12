@@ -21,7 +21,7 @@ import QtQuick 1.1
 import com.nokia.meego 1.0
 import qmlmail 1.0
 
-Page{
+Page {
     id: accountListPage
 
     tools: accountListPageTools
@@ -37,7 +37,10 @@ Page{
             platformIconId: "toolbar-add"
             opacity: enabled ? 1 : 0.5
 
-            onClicked: editAccountSheet.open()
+            onClicked: {
+                console.log("Opening editAccountSheet...")
+                editAccountSheet.open()
+            }
         }
 
         ToolIcon {
@@ -100,13 +103,32 @@ Page{
             id: accountListView
 
             anchors {
-                top: header.top
+                top: header.bottom
                 left: parent.left
                 right: parent.right
                 bottom: parent.bottom
             }
 
             model: accountModel
+
+            delegate: Item{
+                width: parent.width
+                height: delegateText.height
+
+                Text {
+                    id: delegateText
+
+                    anchors {
+                        left: parent.left
+                        leftMargin: 10
+                        right: parent.right
+                        rightMargin: 10
+                    }
+
+                    text: name
+                    font.pixelSize: 34
+                }
+            }
         }
     }
 }
