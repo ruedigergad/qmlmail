@@ -13,6 +13,7 @@ public:
     
     Q_INVOKABLE void printAccountCustomFields(quint64 id);
     Q_INVOKABLE void printAccountConfig(quint64 id);
+    Q_INVOKABLE void printAccountServiceConfig(quint64 id, const QString &service);
 
 signals:
     

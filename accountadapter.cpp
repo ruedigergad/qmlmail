@@ -34,3 +34,9 @@ void AccountAdapter::printAccountConfig(quint64 id){
     QMailAccountConfiguration config = QMailStore::instance()->accountConfiguration(QMailAccountId(id));
     qDebug() << "AccountConfiguration for, id:" << id << ", services:" << config.services();
 }
+
+void AccountAdapter::printAccountServiceConfig(quint64 id, const QString &service){
+    QMailAccountConfiguration config = QMailStore::instance()->accountConfiguration(QMailAccountId(id));
+    QMailAccountConfiguration::ServiceConfiguration serviceConfig = config.serviceConfiguration(service);
+    qDebug() << "AccountServiceConfiguration for, id:" << id << ", service:" << service << "\n" << serviceConfig.values();
+}

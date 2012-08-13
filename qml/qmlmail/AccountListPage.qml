@@ -132,12 +132,19 @@ Page {
                 MouseArea {
                     anchors.fill: parent
 
+                    onClicked: {
+                        accountListView.currentIndex = index
+                    }
+
                     onDoubleClicked: {
                         console.log("Account was double-clicked. Index: " + index)
                         var accId = accountModel.getAccountId(index)
                         console.log("Found id: " + accId)
                         accountAdapter.printAccountCustomFields(accId)
                         accountAdapter.printAccountConfig(accId)
+                        accountAdapter.printAccountServiceConfig(accId, "imap4")
+                        accountAdapter.printAccountServiceConfig(accId, "smtp")
+                        accountAdapter.printAccountServiceConfig(accId, "pop3")
                     }
                 }
             }
